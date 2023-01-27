@@ -39,6 +39,7 @@ window.addEventListener("load", () => {
   function editTask(e) {
     let input = e.target.parentNode.querySelector(".text");
     let taskKey = e.target.parentNode.parentNode.getAttribute("data-task-key");
+    let editBtn = document.querySelector('.blue');
     localStorage.setItem(taskKey, input.value);
     if (e.target.innerText.toLowerCase() == "edit") {
       console.log(e.target);
@@ -47,6 +48,7 @@ window.addEventListener("load", () => {
       input.focus();
       e.target.innerText = "Save";
       input.style.color = "red";
+      editBtn.style.color = "white";
       input.style.backgroundImage = "-webkit-linear-gradient(top, white, white)";
     } else {
       let input = e.target.parentNode.querySelector(".text");
@@ -54,6 +56,7 @@ window.addEventListener("load", () => {
       input.style.backgroundImage =
         "-webkit-linear-gradient(top, #3a0035, #3a0035)";
       input.style.color = "white";
+      editBtn.style.color = "black";
       e.target.innerText = "Edit";
     }
   };
@@ -87,17 +90,18 @@ window.addEventListener("load", () => {
       let editBtnEl = document.createElement("button");
       editBtnEl.setAttribute("onclick", "editTask(event)");
       editBtnEl.classList.add("push_button");
-      editBtnEl.classList.add("blue");
+      editBtnEl.classList.add("blue"); 
       editBtnEl.innerText = "Edit";
-      let inputBtnEl = document.createElement("input");
-      inputBtnEl.classList.add("text");
-      inputBtnEl.setAttribute("type", "text");
-      inputBtnEl.style.backgroundColor ="#3a0035";
-      inputBtnEl.style.color = "white";
-      inputBtnEl.setAttribute("readonly", "readonly");
-      inputBtnEl.value = taskName;
+      let inpuEl = document.createElement("input");
+      inpuEl.classList.add("text");
+      inpuEl.classList.add("container");
+      inpuEl.setAttribute("type", "text");
+      inpuEl.style.backgroundColor ="#3a0035";
+      inpuEl.style.color = "white";
+      inpuEl.setAttribute("readonly", "readonly");
+      inpuEl.value = taskName;
   
-      contentEl.appendChild(inputBtnEl);
+      contentEl.appendChild(inpuEl);
       contentEl.appendChild(editBtnEl);
       contentEl.appendChild(delBtnEl);
       taskEl.appendChild(contentEl);

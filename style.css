@@ -20,7 +20,7 @@ body {
   background-size: 130%;
   border-radius: 50%; 
   overflow: hidden; 
-  transform: scale(1.5);
+  transform: scale(1.4);
 }
 
 
@@ -70,7 +70,7 @@ h5{
   color: aliceblue;
   width: 300px;
   height: 32px;
-  text-align: center;
+  text-align: left;
 }
 
 .btn{
@@ -81,20 +81,36 @@ h5{
   width: 55px;
   height: 35px;
 }
+
+.btn:hover {
+  background: #0f00006b;
+  color: #cfcdcd;
+}
 .blue{
+  border: 2px solid rgb(0, 0, 0);
+  border-radius:9px;
   background-color: #925e6a7c;
-  color: rgb(22, 22, 22);
-  margin-right: 18px;
-  width: 50px;
-  height: 18px;
   color: #0a0600;
+  width: 55px;
+  height: 22px;
+  margin-right: 10px;
+}
+.blue:hover {
+  background: #0f00006b;
+  color: #cfcdcd;
 }
 .red{
+  border: 2px solid rgb(0, 0, 0);
+  border-radius:9px;
   background-color: 
   #63849577;
   color: rgb(223, 0, 0);
-  width: 50px;
-  height: 18px;
+  width: 55px;
+  height: 22px;
+}
+.red:hover {
+  background: #0f00006b;
+  color: #cfcdcd;
 }
 
 .myTasks{
@@ -108,11 +124,14 @@ h5{
 
 .text {
   margin-right: 10px;
+  padding-left: 8px;
+  width: 400px;
+  height: 30px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 650px) {
   body {
     background-size: 350%;
-    transform: scale(0.9);
+    transform: scale(0.5);
   }
 }
